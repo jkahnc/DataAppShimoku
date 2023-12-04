@@ -41,6 +41,6 @@ The EER diagram of the dataset
 ![EER diagram](/assets/pizzaPlaceSales.png)
 
 ## Screanshots
-![Screanshot 1](Screenshot_1.png)
-![Screanshot 2](Screenshot_2.png)
-![Screanshot 3](Screenshot_3.png)
+![Screanshot 1](/assets/Screenshot_1.png)
+![Screanshot 2](/assets/Screenshot_2.png)
+![Screanshot 3](/assets/Screenshot_3.png)
