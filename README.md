@@ -8,7 +8,7 @@ Follow the next steps to install the repository over a linux distributions or a 
 First create the virtual environmental with Python +3.9
 
 ```bash
-python -m venv ven
+python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -41,6 +41,4 @@ The EER diagram of the dataset
 ![EER diagram](/assets/pizzaPlaceSales.png)
 
 ## Screanshots
-![Screanshot 1](/assets/Screenshot_1.png)
-![Screanshot 2](/assets/Screenshot_2.png)
-![Screanshot 3](/assets/Screenshot_3.png)
+![Screanshot 1](/assets/pizza_sales.png)

@@ -1,14 +1,14 @@
 from utils.utils import beautiful_header
 from board import Board
 
-class SalesPizza:
+class PizzaSales:
     """
-    This path is responsible for rendering the social media shares performance page.
+    This path is responsible for rendering the Pizza Sales page.
     """
 
     def __init__(self, board: Board):
         """
-        Initializes the SocialMediaSharesPerformance with a shimoku client instance.
+        Initializes the PizzaSales with a shimoku client instance.
 
         Parameters:
             shimoku: An instance of the Shimoku client.
@@ -29,12 +29,14 @@ class SalesPizza:
         # Create the menu path
         self.shimoku.set_menu_path(name=self.menu_path)
 
+
     def __str__(self) -> str:
         return f"Dashboard {self.menu_path}"
 
+
     def plot(self):
         """
-        Plots the Social Media Shares Performance page.
+        Plots the Pizza Sales page.
         Each method is responsible for plotting a specific section of the page.
         """
         self.plot_header()
@@ -43,7 +45,7 @@ class SalesPizza:
         self.plot_pizza_sales()
         self.plot_pizza_orders()
         self.plotDailyOrders()
-    #         subtitle="Pizza sales resume from a fictitious pizza place over 2015. The dataset represent the pizza's orders considering the price of each pizza type.",
+
 
     def plot_header(self) -> bool:
         """Header plot of the menu path
@@ -66,7 +68,11 @@ class SalesPizza:
         return True
 
     def plot_one_year(self) -> bool:
-        # Plot Series
+        """Plot line chart with pizza order information
+
+        Returns:
+            bool: Execution status
+        """
         self.shimoku.plt.line(
             data=self.df_app["year_orders"],
             order=self.order,
@@ -85,6 +91,11 @@ class SalesPizza:
         return True
 
     def plot_indicators(self) -> bool:
+        """Plot indicator chart for Total Sales, Total Pizzas, Total Orders, Avg. Pizzas/day and Avg. Orders/day
+
+        Returns:
+            bool: Execution status
+        """
         self.shimoku.plt.indicator(
             data=self.df_app["main_kpis"],
             order=self.order,
@@ -98,7 +109,11 @@ class SalesPizza:
         return True
 
     def plot_pizza_sales(self) -> bool:
-        # Plot Series
+        """Plot bar chart with pizza sales by months
+
+        Returns:
+            bool: Execution status
+        """
         self.shimoku.plt.bar(
             data=self.df_app["sales_orders"],
             order=self.order,
@@ -116,6 +131,11 @@ class SalesPizza:
         return True
 
     def plot_pizza_orders(self) -> bool:
+        """Plot bar chart with pizza orders by months
+
+        Returns:
+            bool: Execution status
+        """
         self.shimoku.plt.bar(
             data=self.df_app["sales_orders"],
             order=self.order,
@@ -133,6 +153,11 @@ class SalesPizza:
         return True
 
     def plotDailyOrders(self) -> bool:
+        """plot area chart with averge orders and pizza on a day
+
+        Returns:
+            bool: Execution status
+        """
         self.shimoku.plt.area(
             data=self.df_app["daily_orders"],
             order=self.order,

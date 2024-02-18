@@ -144,11 +144,11 @@ class Board:
 
     def plot(self):
         """
-        A method to plot Social Media Shares Performance.
+        A method to plot Pizza Sales.
 
-        This method utilizes the SocialMediaSharesPerformance class from the paths.social_media_shares_performance
-        module to create and display a plot related to the social media posts. It assumes that
-        SocialMediaSharesPerformance requires a reference to the instance of the class from which
+        This method utilizes the PizzaSales class from the paths. pizza_sales module
+        to create and display a plot related to the social media posts. It assumes
+        that PizzaSales requires a reference to the instance of the class from which
         this method is called.
 
         Args:
@@ -158,9 +158,9 @@ class Board:
         None. The function is used for its side effect of plotting data.
 
         Note:
-        - This method imports the SocialMediaSharesPerformance class within the function scope
+        - This method imports the PizzaSales class within the function scope
           to avoid potential circular dependencies.
-        - Ensure that the SocialMediaSharesPerformance class has access to all necessary data
+        - Ensure that the PizzaSales class has access to all necessary data
           through the passed instance.
         """
 
