@@ -1,30 +1,35 @@
 from os import getenv
 from dotenv import load_dotenv
 
-import shimoku_api_python as Shimoku
+import shimoku as Client
 
-from salesBoard import Dashboard
+from board import Board
 
 def main():
     # Load .env file
     load_dotenv()
 
     # Import enrivomental variable
-    access_token = getenv('SHIMOKU_TOKEN')
+    access_token: str = getenv('SHIMOKU_TOKEN')
     universe_id: str = getenv('UNIVERSE_ID')
     workspace_id: str = getenv('WORKSPACE_ID')
 
     # Client connection
-    client_connect = Shimoku.Client(
+    app = Client(
         access_token=access_token,
         universe_id=universe_id,
+        async_execution=True,
+        verbosity="INFO",
     )
 
-    client_connect.set_workspace(uuid=workspace_id)
+    app.set_workspace(uuid=workspace_id)
 
     # Set Dashboard object
-    board = Dashboard(client_connect)
-    board.setDashboard()
+    board = Board(app)
+    board.plot()
+
+    app.run()
+
 
 if __name__ == "__main__":
   main()
